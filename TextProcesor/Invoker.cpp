@@ -5,7 +5,13 @@ Invoker::Invoker(Document* _doc) {
 }
 
 void Invoker::Do(std::string cmdName, std::istream inpStream) {
-
+	command = nullptr;
+	command = cmdCreator::createCommand(inpStream, cmdName);
+	if (command != nullptr) {
+		command->setDocument(doc);
+		command->Execute();
+		if (cmdName != "copy") DoneCommands.push_back(command);//
+	}
 }
 
 void Invoker::Do(cmd inp)

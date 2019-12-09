@@ -14,7 +14,7 @@ struct cmd {
 
 class cmdCreator {
 public:
-	static Command* createCommand(std::istream inputStream); 
+	static Command* createCommand(std::istream inputStream, std::string cmdName); 
 };
 
 

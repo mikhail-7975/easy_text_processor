@@ -47,29 +47,27 @@ cmd::cmd(std::string inpStr) {
 	}
 }
 
-Command * cmdCreator::createCommand(std::istream inpStream)
+Command * cmdCreator::createCommand(std::istream inpStream, std::string cmdName)
 {
 	
-	std::string word1;
-	inpStream >> word1;
+	std::string word1, word2, word3, word4;
+	//inpStream >> word1;
 
-	if (word1 == "insert") {
-		
+	if (cmdName == "insert") {
+		inpStream >> word1 >> word2;
+		return new InsertCommand(std::stoi(word2), word1);
 	}
-	else if (word1 == "delete") {
-	
+	else if (cmdName == "delete") { 
+		inpStream >> word1 >> word2;
+		return new DeleteCommand(std::stoi(word1), std::stod(word2));
 	}
-	else if (word1 == "copy") {
-	
+	else if (cmdName == "copy") {
+		inpStream >> word1 >> word2;
+		return new CopyCommand(std::stoi(word1), std::stod(word2));
 	}
-	else if (word1 == "paste") {
-	
-	}
-	else if (word1 == "undo") {
-	
-	}
-	else if (word1 == "redo") {
-	
+	else if (cmdName == "paste") {
+		inpStream >> word1;
+		return new PasteCommand(std::stod(word1));
 	} else {
 		UnknownCommandException();
 	}
