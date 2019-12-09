@@ -4,7 +4,7 @@ Invoker::Invoker(Document* _doc) {
 	doc = _doc;
 }
 
-void Invoker::Do(std::string cmdName, std::istream inpStream) {
+void Invoker::Do(std::string cmdName, std::istream& inpStream) {
 	command = nullptr;
 	command = cmdCreator::createCommand(inpStream, cmdName);
 	if (command != nullptr) {
