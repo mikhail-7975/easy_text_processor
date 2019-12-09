@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-//#include "TextProcessor.h"
 #include "command.h"
 #include "document.h"
 #include "Invoker.h"
