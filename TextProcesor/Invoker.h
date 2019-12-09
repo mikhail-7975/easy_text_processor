@@ -12,6 +12,7 @@ class Invoker {
 	Command* command;
 public:
 	Invoker(Document* _doc);
+	void Do(std::string cmdName, std::istream inpStream);
 	void Do(cmd inp);
 	void Undo();
 	void Redo();

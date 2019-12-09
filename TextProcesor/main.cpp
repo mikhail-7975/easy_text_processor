@@ -28,7 +28,7 @@ int main() {
 	Invoker inv(&doc);
 
 	std::string inpstr;
-	while (std::getline(inpFile, inpstr)) {
+	while (/*std::getline(inpFile, inpstr)*/) {
 		cmd inpCmd(inpstr.c_str());
 		switch (inpCmd.code) {
 		case 'u':

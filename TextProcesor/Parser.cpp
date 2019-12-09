@@ -46,3 +46,32 @@ cmd::cmd(std::string inpStr) {
 		UnknownCommandException();
 	}
 }
+
+Command * cmdCreator::createCommand(std::istream inpStream)
+{
+	
+	std::string word1;
+	inpStream >> word1;
+
+	if (word1 == "insert") {
+		
+	}
+	else if (word1 == "delete") {
+	
+	}
+	else if (word1 == "copy") {
+	
+	}
+	else if (word1 == "paste") {
+	
+	}
+	else if (word1 == "undo") {
+	
+	}
+	else if (word1 == "redo") {
+	
+	} else {
+		UnknownCommandException();
+	}
+	return nullptr;
+}
