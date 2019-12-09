@@ -55,6 +55,7 @@ Command * cmdCreator::createCommand(std::istream& inpStream, std::string cmdName
 
 	if (cmdName == "insert") {
 		inpStream >> word1 >> word2;
+		word1 = word1.substr(1, word1.size() - 2);
 		return new InsertCommand(std::stoi(word2), word1);
 	}
 	else if (cmdName == "delete") { 
