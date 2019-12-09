@@ -47,7 +47,7 @@ cmd::cmd(std::string inpStr) {
 	}
 }
 
-Command * cmdCreator::createCommand(std::istream inpStream, std::string cmdName)
+Command * cmdCreator::createCommand(std::istream& inpStream, std::string cmdName)
 {
 	
 	std::string word1, word2, word3, word4;
