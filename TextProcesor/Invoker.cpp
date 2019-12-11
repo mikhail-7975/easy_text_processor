@@ -14,7 +14,7 @@ void Invoker::Do(std::string cmdName, std::istream& inpStream) {
 	}
 }
 
-void Invoker::Do(cmd inp)
+/*void Invoker::Do(cmd inp)
 {
 	command = nullptr;
 	switch (inp.code)
@@ -39,7 +39,7 @@ void Invoker::Do(cmd inp)
 		command->Execute();
 		if (inp.code != 'c') DoneCommands.push_back(command);//
 	}
-}
+}*/
 
 void Invoker::Undo() {
 	if (DoneCommands.size() == 0) return;

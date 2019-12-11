@@ -5,12 +5,12 @@
 
 #include "command.h"
 
-struct cmd {
+/*struct cmd {
 	cmd(std::string inpStr);
 	char code;
 	size_t idx1, idx2;
 	std::string str;
-};
+};*/
 
 class cmdCreator {
 public:

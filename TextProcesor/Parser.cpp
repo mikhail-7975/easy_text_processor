@@ -1,5 +1,6 @@
 #include "Parser.h"
 
+/*\
 cmd::cmd(std::string inpStr) {
 	std::istringstream inp(inpStr);
 	std::string w1, w2, w3, w4;
@@ -46,6 +47,7 @@ cmd::cmd(std::string inpStr) {
 		UnknownCommandException();
 	}
 }
+*/
 
 Command * cmdCreator::createCommand(std::istream& inpStream, std::string cmdName)
 {

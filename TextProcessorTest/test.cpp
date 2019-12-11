@@ -4,7 +4,7 @@
 #include "../TextProcesor/document.h"
 #include "../TextProcesor/command.h"
 //#include "pch.h"
-
+/*
 TEST(TestCaseName, TestName) {
   EXPECT_EQ(1, 1);
   EXPECT_TRUE(true);
@@ -263,4 +263,4 @@ TEST(RedoTest, normalRedo) {
 	inv.Undo();
 	inv.Redo();
 	EXPECT_EQ(doc.data(), "123");
-}
+}*/
