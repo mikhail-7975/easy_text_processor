@@ -4,6 +4,62 @@
 #include "../TextProcesor/document.h"
 #include "../TextProcesor/command.h"
 //#include "pch.h"
+
+TEST(InsertTest, emptyDoc) {
+
+}
+
+TEST(InsertTest, notEmptyDoc) {
+
+}
+
+TEST(InsertTest, outOfDoc) {
+
+}
+
+TEST(InsertTest, negativeInsertPos) {
+
+}
+
+TEST(DeleteTest, emptyDoc) {
+
+}
+
+TEST(DeleteTest, notEmptyDoc) {
+
+}
+
+TEST(DeleteTest, swapIndexes) {
+
+}
+
+TEST(DeleteTest, equalIndexes) {
+
+}
+
+TEST(DeleteTest, outOfDocIndex) {
+
+}
+
+TEST(CopyPasteTest, emptyDoc) {
+
+}
+
+TEST(CopyPasteTest, normalTest) {
+
+}
+
+TEST(CopyPasteTest, outOfDocIndexes) {
+
+}
+
+TEST(CopyPasteTest, swapIndexes) {
+
+}
+
+TEST(CopyPasteTest, equalIndexes) {
+
+}
 /*
 TEST(TestCaseName, TestName) {
   EXPECT_EQ(1, 1);
