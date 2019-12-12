@@ -21,7 +21,11 @@ void InsertCommand::unExecute() {
 
 void isCorrectIndex(int* idx1, int* idx2, size_t size) {
 	if (*idx1 < 0) idx1 = 0;
-	if (*idx1 > *idx2) *idx1 = *idx2;
+	if (*idx1 > *idx2) {
+		int c = *idx2;
+		*idx2 = *idx1;
+		*idx1 = c;
+	}
 	if (*idx1 > size) *idx1 = size;
 	if (*idx2 > size) *idx2 = size;
 }
