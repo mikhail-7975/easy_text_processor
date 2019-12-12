@@ -20,7 +20,7 @@ void InsertCommand::unExecute() {
 }
 
 void isCorrectIndex(int* idx1, int* idx2, size_t size) {
-	if (*idx1 < 0) idx1 = 0;
+	if (*idx1 < 0) *idx1 = 0;
 	if (*idx1 > *idx2) {
 		int c = *idx2;
 		*idx2 = *idx1;

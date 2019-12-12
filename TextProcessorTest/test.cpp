@@ -85,23 +85,66 @@ TEST(DeleteTest, outOfDocIndex) {
 }
 
 TEST(CopyPasteTest, emptyDoc) {
-
+	Document doc;
+	Invoker inv(&doc);
+	std::istringstream inp{ "0 2" };
+	inv.Do("copy", inp);
+	EXPECT_EQ(doc.buffer(), "");
+	std::istringstream inp3{ "6" };
+	inv.Do("paste", inp3);
+	EXPECT_EQ(doc.data(), "");
 }
 
 TEST(CopyPasteTest, normalTest) {
-
+	Document doc;
+	Invoker inv(&doc);
+	std::istringstream inp2{ "\"222111\" 0" };
+	inv.Do("insert", inp2);
+	std::istringstream inp{ "0 2" };
+	inv.Do("copy", inp);
+	EXPECT_EQ(doc.buffer(), "222");
+	std::istringstream inp3{ "6" };
+	inv.Do("paste", inp3);
+	EXPECT_EQ(doc.data(), "222111222");
 }
 
 TEST(CopyPasteTest, outOfDocIndexes) {
-
+	Document doc;
+	Invoker inv(&doc);
+	std::istringstream inp2{ "\"222111\" 0" };
+	inv.Do("insert", inp2);
+	std::istringstream inp{ "-5 10" };
+	inv.Do("copy", inp);
+	EXPECT_EQ(doc.buffer(), "222111");
+	std::istringstream inp3{ "-5" };
+	inv.Do("paste", inp3);
+	EXPECT_EQ(doc.data(), "222111222111");
 }
 
 TEST(CopyPasteTest, swapIndexes) {
-
+	Document doc;
+	Invoker inv(&doc);
+	std::istringstream inp2{ "\"222111\" 0" };
+	inv.Do("insert", inp2);
+	std::istringstream inp{ "2 0" };
+	inv.Do("copy", inp);
+	EXPECT_EQ(doc.buffer(), "222");
+	std::istringstream inp3{ "6" };
+	inv.Do("paste", inp3);
+	EXPECT_EQ(doc.data(), "222111222");
 }
 
 TEST(CopyPasteTest, equalIndexes) {
-
+	Document doc;
+	Invoker inv(&doc);
+	std::istringstream inp2{ "\"222111\" 0" };
+	inv.Do("insert", inp2);
+	std::istringstream inp{ "3 3" };
+	inv.Do("copy", inp);
+	EXPECT_EQ(doc.buffer(), "1");
+	std::istringstream inp3{ "0" };
+	inv.Do("paste", inp3);
+	EXPECT_EQ(doc.data(), "1222111");
 }
 /*
 TEST(TestCaseName, TestName) {
