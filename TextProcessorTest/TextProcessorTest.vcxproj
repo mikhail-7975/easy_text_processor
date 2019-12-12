@@ -33,17 +33,17 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClInclude Include="..\TextProcesor\cmdCreator.h" />
     <ClInclude Include="..\TextProcesor\command.h" />
     <ClInclude Include="..\TextProcesor\document.h" />
     <ClInclude Include="..\TextProcesor\Invoker.h" />
-    <ClInclude Include="..\TextProcesor\Parser.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\TextProcesor\cmdCreator.cpp" />
     <ClCompile Include="..\TextProcesor\command.cpp" />
     <ClCompile Include="..\TextProcesor\document.cpp" />
     <ClCompile Include="..\TextProcesor\Invoker.cpp" />
-    <ClCompile Include="..\TextProcesor\Parser.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

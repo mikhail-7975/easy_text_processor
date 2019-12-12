@@ -11,10 +11,10 @@
     <ClCompile Include="..\TextProcesor\Invoker.cpp">
       <Filter>files</Filter>
     </ClCompile>
-    <ClCompile Include="..\TextProcesor\Parser.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>files</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="..\TextProcesor\cmdCreator.cpp">
       <Filter>files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -28,10 +28,10 @@
     <ClInclude Include="..\TextProcesor\Invoker.h">
       <Filter>files</Filter>
     </ClInclude>
-    <ClInclude Include="..\TextProcesor\Parser.h">
+    <ClInclude Include="pch.h">
       <Filter>files</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
+    <ClInclude Include="..\TextProcesor\cmdCreator.h">
       <Filter>files</Filter>
     </ClInclude>
   </ItemGroup>

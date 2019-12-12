@@ -3,7 +3,7 @@
 #include <vector>
 #include "command.h"
 #include "document.h"
-#include "Parser.h"
+#include "cmdCreator.h"
 
 class Invoker {
 	std::vector<Command*> DoneCommands;

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../TextProcesor/Parser.h"
+#include "../TextProcesor/cmdCreator.h"
 #include "../TextProcesor/Invoker.h"
 #include "../TextProcesor/document.h"
 #include "../TextProcesor/command.h"

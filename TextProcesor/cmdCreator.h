@@ -3,6 +3,7 @@
 #include <exception>
 #include <sstream>
 
+#include "cmdCreator.h"
 #include "command.h"
 
 /*struct cmd {

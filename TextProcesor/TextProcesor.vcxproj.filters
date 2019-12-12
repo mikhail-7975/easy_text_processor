@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Parser.cpp">
-      <Filter>parser</Filter>
-    </ClCompile>
     <ClCompile Include="command.cpp">
       <Filter>command</Filter>
     </ClCompile>
@@ -28,11 +25,11 @@
       <Filter>invoker</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="cmdCreator.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Parser.h">
-      <Filter>parser</Filter>
-    </ClInclude>
     <ClInclude Include="command.h">
       <Filter>command</Filter>
     </ClInclude>
@@ -41,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="document.h">
       <Filter>document</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdCreator.h">
+      <Filter>parser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
