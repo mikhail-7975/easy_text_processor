@@ -6,20 +6,13 @@
 #include "cmdCreator.h"
 #include "command.h"
 
-/*struct cmd {
-	cmd(std::string inpStr);
-	char code;
-	size_t idx1, idx2;
-	std::string str;
-};*/
-
-class cmdCreator {
+class cmdCreator final {
 public:
-	static Command* createCommand(std::istream& inputStream, std::string cmdName); 
+	static Command* createCommand(std::istream& inputStream, const std::string& cmdName); 
 };
 
 
-class UnknownCommandException : public std::exception {
+class UnknownCommandException final: public std::exception {
 public:
 	UnknownCommandException() : std::exception("unknown command") {}
 };

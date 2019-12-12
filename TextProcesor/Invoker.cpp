@@ -5,7 +5,7 @@ Invoker::Invoker(Document* _doc) {
 	doc = _doc;
 }
 
-void Invoker::Do(std::string cmdName, std::istream& inpStream) {
+void Invoker::Do(const std::string& cmdName, std::istream& inpStream) {
 	command = nullptr;
 	command = cmdCreator::createCommand(inpStream, cmdName);
 	if (command != nullptr) {
@@ -32,6 +32,6 @@ void Invoker::Redo() {
 	DoneCommands.push_back(command);
 }
 
-void Invoker::Show() {
-	std::cout << doc->data() << std::endl;
+void Invoker::Show(std::ostream& outputStream) {
+	outputStream << doc->data() << std::endl;
 }

@@ -33,6 +33,6 @@ int main() {
 		else if (cmdName == "redo") inv.Redo();
 		else inv.Do(cmdName, inpFile);
 	}
-	inv.Show();
+	inv.Show(std::cout);
 	system("pause");
 }

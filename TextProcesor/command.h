@@ -5,6 +5,8 @@
 class Command {
 protected:
 	Document *doc;
+	std::string* docData;
+	std::string* docBuffer;
 public:
 	virtual ~Command() {}
 	virtual void Execute() = 0;
