@@ -8,5 +8,5 @@ public:
 	size_t bufferSize;
 	std::string& data() { return _data; }
 	std::string& buffer() { return _buffer; }
-	void Show();
+	
 };

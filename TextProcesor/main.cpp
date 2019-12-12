@@ -26,29 +26,13 @@ int main() {
 
 	Invoker inv(&doc);
 
-	//std::string inpstr
 	std::string cmdName;
-	/*while (std::getline(inpFile, inpstr)) {
-		cmd inpCmd(inpstr.c_str());
-		switch (inpCmd.code) {
-		case 'u':
-			inv.Undo();
-			break;
-		case 'r':
-			inv.Redo();
-			break;
-		default:
-			inv.Do(inpCmd);
-			break;
-		}
-		std::cout << "cmd: " << inpCmd.code << " " << inpCmd.str << "; result: ";
-		inv.Show(); 
-	}*/
+	
 	while (inpFile >> cmdName) {
 		if (cmdName == "undo") inv.Undo(); 
 		else if (cmdName == "redo") inv.Redo();
 		else inv.Do(cmdName, inpFile);
 	}
-	doc.Show();
+	inv.Show();
 	system("pause");
 }
