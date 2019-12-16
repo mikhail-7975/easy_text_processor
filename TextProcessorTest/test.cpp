@@ -102,7 +102,7 @@ TEST(CopyPasteTest, normalTest) {
 	inv.Do("insert", inp2);
 	std::istringstream inp{ "0 2" };
 	inv.Do("copy", inp);
-	EXPECT_EQ(doc->buffer(), "222");
+	ASSERT_EQ(doc->buffer(), "222");
 	std::istringstream inp3{ "6" };
 	inv.Do("paste", inp3);
 	EXPECT_EQ(doc->data(), "222111222");

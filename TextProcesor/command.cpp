@@ -2,8 +2,8 @@
 
 void Command::setDocument(std::shared_ptr<Document> _doc) {
 	doc = _doc;
-	docData = std::make_shared<std::string>(doc->data());
-	docBuffer = std::make_shared<std::string>(doc->buffer());
+	docData.reset(&doc->data());
+	docBuffer.reset(&doc->buffer());
 }
 
 void InsertCommand::Execute() {
@@ -43,22 +43,23 @@ void DeleteCommand::unExecute() {
 }
 
 void CopyCommand::Execute() {
-	std::string& docData = doc->data();
-	std::string& docBuffer = doc->buffer();
-	isCorrectIndex(idx1, idx2, docData.size());
-	docBuffer = docData.substr(idx1, idx2 - idx1 + 1);
+	//std::string& docData = doc->data();
+	//std::string& docBuffer = doc->buffer();
+	isCorrectIndex(idx1, idx2, docData->size());
+	docBuffer.reset(&docData->substr(idx1, idx2 - idx1 + 1));
+	//docData->substr(idx1, idx2 - idx1 + 1)
 }
 
 void PasteCommand::Execute() {
-	std::string& docData = doc->data();
-	std::string& docBuffer = doc->buffer();
+	//std::string& docData = doc->data();
+	//std::string& docBuffer = doc->buffer();
 	if (idx1 < 0) idx1 = 0;
-	if (idx1 > docData.size()) idx1 = docDatasize();
-	docData.insert(idx1, docBuffer);
+	if (idx1 > docData->size()) idx1 = docData->size();
+	docData->insert(idx1, *docBuffer);
 }
 
 void PasteCommand::unExecute() {
-	std::string& docData = doc->data();
-	std::string& docBuffer = doc->buffer();
-	docData.erase(idx1, idx1 + docBuffer.size());
+	//std::string& docData = doc->data();
+	//std::string& docBuffer = doc->buffer();
+	docData->erase(idx1, idx1 + docBuffer->size());
 }

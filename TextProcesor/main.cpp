@@ -22,7 +22,7 @@ int main() {
 		//throw FReadException();
 	}
 
-	std::shared_ptr<Document> doc;
+	std::shared_ptr<Document> doc(new Document);
 
 	Invoker inv(doc);
 
