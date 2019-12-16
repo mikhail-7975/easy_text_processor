@@ -1,7 +1,7 @@
 #include "Invoker.h"
 #include <iostream>
 
-Invoker::Invoker(Document* _doc) {
+Invoker::Invoker(std::shared_ptr<Document> _doc) {
 	doc = _doc;
 }
 

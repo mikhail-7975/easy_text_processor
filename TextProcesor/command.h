@@ -4,14 +4,14 @@
 
 class Command {
 protected:
-	Document *doc;
+	std::shared_ptr<Document> doc;
 	std::string* docData;
 	std::string* docBuffer;
 public:
 	virtual ~Command() {}
 	virtual void Execute() = 0;
 	virtual void unExecute() = 0;
-	void setDocument(Document* _doc);
+	void setDocument(std::shared_ptr<Document> _doc);
 };
 
 class InsertCommand final : public Command {

@@ -1,6 +1,6 @@
 #include "command.h"
 
-void Command::setDocument(Document* _doc) {
+void Command::setDocument(std::shared_ptr<Document> _doc) {
 	doc = _doc;
 }
 
