@@ -5,8 +5,8 @@
 class Command {
 protected:
 	std::shared_ptr<Document> doc;
-	std::string* docData;
-	std::string* docBuffer;
+	std::shared_ptr<std::string> docData;
+	std::shared_ptr<std::string> docBuffer;
 public:
 	virtual ~Command() {}
 	virtual void Execute() = 0;

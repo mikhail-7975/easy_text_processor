@@ -2,6 +2,8 @@
 
 void Command::setDocument(std::shared_ptr<Document> _doc) {
 	doc = _doc;
+	docData = std::make_shared<std::string>(doc->data());
+	docBuffer = std::make_shared<std::string>(doc->buffer());
 }
 
 void InsertCommand::Execute() {
